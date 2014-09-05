@@ -55,7 +55,7 @@ def run(code):
 			if tape.get():
 				p = b[p]
 		elif c == ".":
-			sys.stdout.write(chr(tape.get()%255))
+			sys.stdout.write(chr(tape.get()%256))
 		elif c == ",":
 			r = raw_input("")
 			if r:
