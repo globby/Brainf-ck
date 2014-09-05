@@ -31,7 +31,9 @@ def getbrackets(code):
 			opening.append(i)
 		elif v == "]":
 			if opening:
-				brackets[i] = opening.pop()
+				o = opening.pop()
+				brackets[i] = o
+				brackets[o] = i
 			else:
 				print "Error: Unbalanced brackets"
 				sys.exit(-1)
@@ -51,6 +53,9 @@ def run(code):
 			tape.inc_p()
 		elif c == "<":
 			tape.dec_p()
+		elif c == "[":
+			if not tape.get():
+				p = b[p]
 		elif c == "]":
 			if tape.get():
 				p = b[p]
