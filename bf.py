@@ -1,4 +1,5 @@
 import sys
+
 class Tape(object):
 	def __init__(self):
 		self.tape = [0 for i in range(2000)]
@@ -21,6 +22,7 @@ class Tape(object):
 		return self.tape[self.point]
 	def set(self, val):
 		self.tape[self.point] = val
+
 def getbrackets(code):
 	brackets = {}
 	opening = []
@@ -34,7 +36,6 @@ def getbrackets(code):
 				print "Error: Unbalanced brackets"
 				sys.exit(-1)
 	return brackets
-
 
 def run(code):
 	b = getbrackets(code)
