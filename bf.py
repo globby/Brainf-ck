@@ -70,6 +70,8 @@ if __name__ == "__main__":
 	else:
 		try:
 			with open(sys.argv[1]) as f:
-				run(f.read())
+				dat = f.read()
 		except:
 			print "Error: Couldn't open file"
+		else:
+			run(dat)
